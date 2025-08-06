@@ -22,9 +22,9 @@
                     </div>
                 <section class="Central_pasta">
                     <main>
-                        <div>
-                            <h1 class="Titulo_Hino_mocidade">Hinos Mocidade Zuriel</h1>
-                            <input type="text" id="barra-pesquisa" onkeyup="pesquisar()" placeholder="Digite para pesquisar...">
+                        <div style="display: flex;flex-direction: column; align-items: center; gap: 10px; padding-bottom: 1rem;">
+                        <h1 class="Titulo_Hino_mocidade">Hinos Mocidade Zuriel</h1>
+                        <input type="text" id="barra-pesquisa" onkeyup="pesquisar()" placeholder="Digite para pesquisar...">
                         </div>
                         <div class="lista_hinos">
                             <a href="Letras Musicas/m1.html">Alcancei a Salvação</a><br>
@@ -44,7 +44,7 @@
                             <a href="Letras Musicas/m15.html">Em Tua Presença Senhor</a><br>
                             <a href="Letras Musicas/m16.html">Ele é…</a><br>
                             <a href="Letras Musicas/m17.html">Estou Pronto</a><br>
-                        
+                            <a href="Letras Musicas/m18.html">Eli, Eli Lama Sabactani</a><br>
                             <a href="Letras Musicas/m19.html">Escudo</a><br>
                             <a href="Letras Musicas/m20.html">Fala Comigo</a><br>
                             <a href="Letras Musicas/m21.html">Faz Chover</a><br>
@@ -170,21 +170,26 @@
                 }
                    document.addEventListener('DOMContentLoaded', function () {
                         const container = document.getElementById('intro-video-container');
+                        const video = document.getElementById('intro-video');
 
-                        // Verifica se o vídeo já foi exibido nesta sessão
                         const introJaFoi = sessionStorage.getItem('introFoi');
 
                         if (!introJaFoi) {
-                        container.style.display = 'block';
+                            container.style.display = 'block';
 
-                        // Esconde o vídeo após 6 segundos (ajuste conforme o tempo do vídeo)
-                        setTimeout(() => {
-                            container.style.display = 'none';
-                        }, 8000);
+                            // Força a reprodução do vídeo
+                            video.play().catch(function (error) {
+                                console.log('Erro ao tentar reproduzir o vídeo:', error);
+                            });
 
-                        sessionStorage.setItem('introFoi', 'true');
+                            setTimeout(() => {
+                                container.style.display = 'none';
+                            }, 8000);
+
+                            sessionStorage.setItem('introFoi', 'true');
                         }
                     });
+
                         if ('serviceWorker' in navigator) {
                             navigator.serviceWorker.register('service-worker.js')
                             .then(function(reg) {

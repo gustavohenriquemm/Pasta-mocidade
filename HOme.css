@@ -61,14 +61,17 @@ body {
   display: flex;
   justify-content: center;
   color: #ddd;
+  font-size: 1rem;
+  
 }
 
 
 input#barra-pesquisa {
-  width: 100%;
+  width: 18rem;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px; /* <- Isso impede o zoom automático no mobile */
 }
 
 
