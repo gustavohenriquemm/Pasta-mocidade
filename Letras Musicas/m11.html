@@ -51,10 +51,16 @@
 </div>
 <div class="butons_redireciona">
  <a class="Buton_2" href="www.youtube.com/watch?time_continue=76&v=JXM-1JhR2hs&embeds_referring_euri=https%3A%2F%2Fchatgpt.com%2F&source_ve_path=MjM4NTE" target="_blank">Youtube</a>
-  <a class="Buton_2" href="javascript:void(0)" onclick="window.open('https://wa.me/?text=' + encodeURIComponent(window.location.href), '_blank')">Encaminhar</a>
+  <a class="Buton_20" href="javascript:void(0);" onclick="compartilharWhatsApp()">WhatsApp</a>
 
-</div>
-
+  </div>
+  <script>
+function compartilharWhatsApp() {
+    let linkPagina = window.location.href; // Link da página atual
+      let mensagem = encodeURIComponent("Segue o link do Hino ensaiado.\n\n" + linkPagina);
+    window.open("https://wa.me/?text=" + mensagem, "_blank");
+}
+</script>
 
 
 </body>

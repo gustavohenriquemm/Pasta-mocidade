@@ -26,13 +26,19 @@
     Vem, Vem<br>
     Unção derramar
   </p>
-
+ </div>
   <div class="butons_redireciona">
     <a class="Buton_2" href="https://www.youtube.com/watch?v=SnG-ZYcsltw" target="_blank" rel="noopener noreferrer">Youtube</a>
-    <a class="Buton_2" href="javascript:void(0)" onclick="window.open('https://wa.me/?text=' + encodeURIComponent(window.location.href), '_blank')">Encaminhar</a>
+ <a class="Buton_20" href="javascript:void(0);" onclick="compartilharWhatsApp()">WhatsApp</a>
 
   </div>
-</div>
+  <script>
+function compartilharWhatsApp() {
+    let linkPagina = window.location.href; // Link da página atual
+      let mensagem = encodeURIComponent("Segue o link do Hino ensaiado.\n\n" + linkPagina);
+    window.open("https://wa.me/?text=" + mensagem, "_blank");
+}
+</script>
 
 
 </body>

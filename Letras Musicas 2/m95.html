@@ -60,7 +60,15 @@
 
   <div class="butons_redireciona">
     <a class="Buton_20" href="" target="_blank">Youtube</a>
-    <a class="Buton_20" href="" target="_blank">Whatsapp</a>
+   <a class="Buton_20" href="javascript:void(0);" onclick="compartilharWhatsApp()">WhatsApp</a>
+
   </div>
+  <script>
+function compartilharWhatsApp() {
+    let linkPagina = window.location.href; // Link da página atual
+      let mensagem = encodeURIComponent("Segue o link do Hino ensaiado.\n\n" + linkPagina);
+    window.open("https://wa.me/?text=" + mensagem, "_blank");
+}
+</script>
 </body>
 </html>

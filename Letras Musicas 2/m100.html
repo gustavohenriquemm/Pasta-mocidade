@@ -11,5 +11,15 @@
   </a>
   <h1>Hino 100</h1>
   <p>Letra do Hino 100 aqui...</p>
+   <a class="Buton_20" href="javascript:void(0);" onclick="compartilharWhatsApp()">WhatsApp</a>
+
+  </div>
+  <script>
+function compartilharWhatsApp() {
+    let linkPagina = window.location.href; // Link da página atual
+      let mensagem = encodeURIComponent("Segue o link do Hino ensaiado.\n\n" + linkPagina);
+    window.open("https://wa.me/?text=" + mensagem, "_blank");
+}
+</script>
 </body>
 </html>
